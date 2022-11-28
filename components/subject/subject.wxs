@@ -1,0 +1,16 @@
+var propObserver = function (newValue, oldValue, ownerInstance, instance) {
+  // if (newValue) {
+  //   var canvasInstance = ownerInstance.selectComponent('#order-canvas')
+  //   canvasInstance.setStyle({
+  //     display: 'none'
+  //   })
+  // }
+}
+var getUrlType = function(index) {
+  return index === 0 ? 'order' : 'rand'
+}
+
+module.exports = {
+  propObserver: propObserver,
+  getUrlType: getUrlType
+}

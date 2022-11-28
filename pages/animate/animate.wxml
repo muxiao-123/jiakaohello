@@ -1,0 +1,51 @@
+<!--pages/animate/animate.wxml-->
+<wxs module="home" >
+  var getIcon = function(model) {
+    if (typeof model !== 'string') {
+      return 'icon-car'
+    }
+    if (model.indexOf('a') > -1) {
+      return 'icon-huoche'
+    } else if (model.indexOf('b') > -1) {
+      return 'icon-gongjiaokeche'
+    } else {
+      return 'icon-car'
+    }
+  }
+  module.exports = {
+    getIcon: getIcon
+  }
+</wxs>
+<view class="animate">
+  <tabs tabList="{{tabList}}" bindtoggle="toggleHandle">
+    <block wx:for="{{subjectPannel}}" wx:key="code">
+      <view slot="{{item.code}}" class="subject1">
+        <subject
+          subjectInfo="{{item}}"
+          bindopenpage="openPage"
+          type="{{item.code === 'subject1' ? 'subject1' : 'subject4'}}"
+        ></subject>
+      </view>    
+    </block>
+  </tabs>
+  <education></education>
+  <view class="demo-subject-model">
+    <view
+      class="demo-subject-model-item iconfont {{home.getIcon(jkInfo.model)}}"
+    >
+    </view>
+    <view class="demo-subject-model-item">当前题库:{{jkInfo.model}}</view>
+    <view class="demo-subject-model-item">
+      定位
+    </view>
+    <view class="iconfont icon-youjiantou>"></view>
+  </view>
+  <view class="demo-bottom">
+    <text class="demo-bottom-title">
+      找驾考 考驾照 就用 驾考hello
+    </text>
+    <text class="demo-bottom-arrdess">
+      www.jiakaohello.com
+    </text>
+  </view>
+</view>

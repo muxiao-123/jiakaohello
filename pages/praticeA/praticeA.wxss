@@ -1,0 +1,122 @@
+/* pages/praticeA/praticeA.wxss */
+.praticeA-header {
+  position: relative;
+  height: 300rpx;
+  background-color: var(--themeColor);
+}
+.praticeA-header-content {
+  position: absolute;
+  top: 30%;
+  left: 40rpx;
+  right: 40rpx;
+  background-color: #ffffff;
+  box-shadow: 0 0 20rpx 20rpx rgba(0, 0, 0,.05);
+  border-radius: 30rpx;
+}
+.pac-pencentage {
+  padding: 40rpx 0;
+  height: 100rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.pac-pencentage-num {
+  font-size: 60rpx;
+  color: var(--themeColor-light);
+}
+.pac-pencentage-icon {
+  font-size: 30rpx;
+}
+.pac-pencentage-desc {
+  font-size: 26rpx;
+  font-weight: bolder;
+}
+
+.pac-mid-content {
+  padding-top: 20rpx;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+.pac-mid-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+}
+.pac-mid-item-time {
+  font-size: 30rpx;
+}
+.pac-mid-item-desc {
+  color: var(--text-color-default);
+}
+.pac-btn {
+  margin:  40rpx auto;
+  width: 200rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  border: 2rpx solid #000000;
+  text-align: center;
+  padding: 0 20rpx;
+  border-radius: 35rpx;
+}
+.praticeA-middle {
+  padding: 240rpx 20rpx 0;
+}
+.pa-m-header {
+  padding: 20rpx 20rpx 0rpx;
+  display: flex;
+  color: var(--text-color-default);
+  align-items: flex-end;
+}
+.pa-m-title {
+  font-size: 36rpx;
+  font-weight: bolder;
+  color: #000000;
+}
+.pa-m-desc {
+  padding-left: 20rpx;
+  flex: 1;
+  font-size: 24rpx;
+  /* text-align: end; */
+}
+.pa-m-num {
+  padding-right: 20rpx;
+  font-size: 24rpx;
+}
+.pa-progress-text {
+  margin-bottom: 20rpx;
+  text-align: center;
+  width: 100rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: #ffffff;
+  background-color: var(--themeColor-light);
+}
+.pa-progress {
+  padding: 40rpx 20rpx;
+}
+.praticeA-bottom {
+  padding: 0rpx 40rpx;
+}
+.pa-b-title {
+  padding-bottom: 20rpx;
+}
+.pa-b-item {
+  display: flex;
+  font-size: 28rpx;
+  align-items: center;
+  padding-bottom: 20rpx;
+}
+.pa-b-item-descA {
+  color: #0f0101;
+}
+.pa-b-item-descB {
+  font-size: 20rpx;
+}
+.pa-b-item .iconfont{
+  flex: 1;
+  text-align: right;
+}

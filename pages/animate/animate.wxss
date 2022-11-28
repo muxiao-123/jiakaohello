@@ -1,0 +1,38 @@
+/* pages/animate/animate.wxss */
+@import "../../icon/index.wxss";
+.subject1 {
+  height: 100%;
+}
+.demo-subject-model {
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  letter-spacing: 4rpx;
+  padding: 20rpx 20rpx;
+  border-top: 20rpx solid var(--bg-color-place);
+  border-bottom: 20rpx solid var(--bg-color-place);
+  color: #1b1818;
+}
+.demo-subject-model-item:nth-of-type(1) {
+  width: 60rpx;
+  color: var(--themeColor-light)
+}
+.demo-subject-model-item:nth-of-type(2) {
+  flex-grow: 1;
+}
+.demo-bottom {
+  height: 300rpx;
+  display: flex;
+  background-color: #ffffff;
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  /* border-top: 20rpx solid rgba(0, 0, 0, 0.1); */
+}
+.demo-bottom-title {
+  font-size: 0.9em;
+}
+.demo-bottom-arrdess {
+  font-size: 0.7em;
+}

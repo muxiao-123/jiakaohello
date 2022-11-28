@@ -1,0 +1,51 @@
+<!--pages/finish/finish.wxml-->
+<wxs src="./finish.wxs" module="finish"></wxs>
+<view class="finish">
+  <view
+    class="header"
+  >
+  <!-- style="background-image: url({{bgImage}});" -->
+    <image
+      src="{{bgImage}}"
+      class="bgimage"
+      bindload="{{finish.handleLoad}}"
+      
+    ></image>
+    <view class="header-grade">
+      <view class="header-grade-text">{{_pageData.gradeText}}</view>
+      <view class="header-grade-desc">{{_pageData.grade}}</view>
+    </view>
+    <view class="header-info">
+      <view class="header-info-image"></view>
+      <view class="header-info-content">
+        <view class="desc">获得称号</view>
+        <view class="name">{{_pageData.name}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="select">
+    <view
+      bindtap="showHandle"
+      wx:for="{{selectArr}}"
+      wx:key="id"
+      class="select-item"
+      data-value="{{item.name}}"
+    >
+      <view class="iconfont {{item.iconLeft}}"></view>
+      <view class="desc">
+        <view class="desc-text">{{item.item1}}</view>
+        <view class="desc-text">{{item.item2}}</view>
+      </view>
+      <view class="iconfont {{item.iconRight}}"></view>
+    </view>
+  </view>
+</view>
+<view class="canvas-box">
+  <canvas type="2d" class="finish-canvas"></canvas>
+</view>
+<view class="finish-loading">
+  <view class="rotate-box">
+    <view class="finish-loading-icon">驾考hello</view>
+    <view class="finish-loading-icon-front">驾考hello</view>
+  </view>
+</view>

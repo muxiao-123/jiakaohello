@@ -1,0 +1,19 @@
+var typeMap = {
+  singer: '单选题',
+  multi: '多选题',
+  judg: '判断题',
+  all: '全选题',
+  item1: 'A',
+  item2: 'B',
+  item3: 'C',
+  item4: 'D',
+}
+module.exports = {
+  getQuestionType: function(type) {
+    console.log(type)
+    return typeMap[type] || typeMap['singer']
+  },
+  getItemName: function(key) {
+    return typeMap[key] || typeMap['item1']
+  }
+}

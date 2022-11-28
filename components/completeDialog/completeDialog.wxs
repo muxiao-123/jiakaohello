@@ -1,0 +1,32 @@
+var caclGrade = function (grade, testType) {
+  if (testType === 'rand') {
+    if (grade == 100) {
+      return '满分'
+    } else if (grade >= 80) {
+      return '优秀'
+    } else if (grade >= 60) {
+      return '及格'
+    } else {
+      return '不及格'
+    }    
+  } else {
+      return grade
+  }
+}
+var isSubmit = function (actionType) {
+  return actionType === 'submit'
+}
+var setColor = function (c_pencentage) {
+  return c_pencentage >= 60 ? 'green' : 'red'
+}
+var wxPropObserver = function (newValue, oldValue, ownerInstance) {
+  if (newValue) {
+    ownerInstance.callMethod('startCanvas')
+  }
+}
+module.exports = {
+  caclGrade: caclGrade,
+  isSubmit: isSubmit,
+  setColor: setColor,
+  wxPropObserver: wxPropObserver
+} 

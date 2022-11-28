@@ -1,0 +1,3 @@
+// 翻页wxs 通过交替两个视图
+
+module.exports = {}

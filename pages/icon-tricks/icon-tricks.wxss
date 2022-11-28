@@ -1,0 +1,43 @@
+/* pages/icon-tricks/icon-tricks.wxss */
+.trick-item-header {
+  display: flex;
+  height: 80rpx;
+  align-items: center;
+  padding-left: 20rpx;
+}
+.trick-item-header-desc {
+  flex: 1;
+}
+.trick-item-header-btn {
+  width: 150rpx;
+}
+.trick-item-header-btn text:first-child {
+  font-size: 28rpx;
+  padding-right: 20rpx;
+  color: rgba(0,0,0,.7)
+}
+.trick-item-image{
+  padding-left: 20rpx;
+  display: flex;
+  /* justify-content: space-around; */
+}
+.trick-item-image {
+  margin-top: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 2rpx solid rgba(0,0,0,.1);
+}
+.icon-image {
+  margin-right: 20rpx;
+  width: 120rpx;
+  height: 120rpx;
+  background-color: rgba(0,0,0,.05);
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-image-inner {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+}

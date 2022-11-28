@@ -1,0 +1,3 @@
+<!--components/count-down/count-down.wxml-->
+<wxs src="./count-down.wxs" module="cd"></wxs>
+<view>{{cd.showCount(time)}}</view>

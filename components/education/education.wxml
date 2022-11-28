@@ -1,0 +1,24 @@
+<!--components/education/education.wxml-->
+<view class="education">
+  <view class="education-header">
+    <text class="education-text" bindtap="getDemo">驾考教育</text>
+    <text class="education-text" >更多》</text>
+  </view>
+  <view class="education-s-box">
+    <swiper
+      class="education-swiper"
+      display-multiple-items="{{1.8}}"
+      next-margin="60rpx"
+    >
+      <swiper-item class="education-swiper-item">
+        <image class="e-s-item-image" mode="aspectFill" src="http://192.168.43.217/default.jpg"></image>
+      </swiper-item>
+      <swiper-item>
+        <image class="e-s-item-image e-s-i-i-n" mode="aspectFill" src="http://192.168.43.217/defaultA.jpg"></image>
+      </swiper-item>
+      <swiper-item>
+        <image class="e-s-item-image e-s-i-i-nn" mode="aspectFill" src="http://192.168.43.217/default.jpg"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

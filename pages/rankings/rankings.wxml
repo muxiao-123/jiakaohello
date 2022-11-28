@@ -1,0 +1,49 @@
+<!--pages/rankings/rankings.wxml-->
+<import src="../../template/cell-row/cell-row"></import>
+<page-meta root-font-size="system" />
+<tabs tabList="{{tabList}}" height="90vh" bindtoggle="toggleHandle">
+  <view slot="subject1">
+    <scroll-view
+      class="scroll-view"
+      scroll-y
+      enhanced
+      show-scrollbar="{{false}}"
+    >
+      <view class="rank-box">
+        <cellRow info="{{userInfo}}"></cellRow>
+      </view>
+      <view wx:if="{{examList.length !== 0}}" class="rand-box-cell">
+        <view
+          wx:for="{{examList}}"
+          wx:key="date"
+          class="rand-box-cell-item"
+          wx:for-item="info"
+        >
+          <template is="cell-row" data="{{info}}"></template>
+        </view>
+      </view>
+      <view wx:else class="rank-placeholder">
+        <view class="rank-placeholder-box">
+          <text class="iconfont icon-cuotiben"></text>
+          <text class="rank-placeholder-text">还没有考试记录哟!</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view slot="subject4">
+    <scroll-view
+      class="scroll-view"
+      scroll-y
+      enhanced
+      show-scrollbar="{{false}}"
+    >
+      <view class="rank-box">
+        <block wx:for="{{rankList}}" wx:key="id">
+          <view class="rank-box-inner">
+            <cellRow index="{{index}}" info="{{item}}"></cellRow>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+</tabs>

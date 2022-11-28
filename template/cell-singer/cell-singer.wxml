@@ -1,0 +1,8 @@
+<!-- item: {icon, title} -->
+<template name="cell-singer">
+  <view bindtap="selectHandle" class="cell-singer">
+    <view class="left-icon iconfont {{item.icon}}"></view>
+    <view class="cell-singer-content">{{item.title}}</view>
+    <view class="right-icon iconfont icon-youjiantou"></view>
+  </view>
+</template>

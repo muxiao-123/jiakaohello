@@ -1,0 +1,13 @@
+var showCount = function (time) {
+  var ms = formatNumber((time % 1000) / 10)
+  var s = formatNumber(Math.floor((time / 1000) % 60))
+  var m = formatNumber(Math.floor((time / 60000) % 60))
+  return m + ':' + s + ':' + ms
+}
+var formatNumber = function (n) {
+  n = n.toString()
+  return n[1] ? n : '0' + n
+}
+module.exports = {
+  showCount: showCount
+}

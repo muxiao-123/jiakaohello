@@ -1,0 +1,129 @@
+/* pages/mine/mine.wxss */
+@import "../../icon/index.wxss";
+@import "../../template/mine-style/mine-style.wxss";
+@import "../../template/cell-singer/cell-singer.wxss";
+@import "../../template//mine-cell/mine-cell.wxss";
+.mine {
+  position: relative;
+  background-color: rgba(0, 0, 0, .05);
+}
+.mine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 300rpx;
+  background-image: linear-gradient(to right, var(--themeColor-light-A), var(--themeColor-light));
+}
+.header {
+  position: absolute;
+  left: 40rpx;
+  right: 40rpx;
+  height: 300rpx;
+  background-color: #ffffff;
+  border-radius: 20rpx;
+  box-shadow: 0 0 10rpx 10rpx rgba(0, 0, 0, .1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.header-top {
+  padding: 10rpx 20rpx;
+  display: flex;
+  align-items: center;
+}
+.top-image {
+  margin-right: 20rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  font-size: 100rpx;
+  color: #cccccc;
+  border: 2rpx solid rgba(0, 0, 0, .1);
+  /* background-color: red; */
+}
+.top-text {
+  overflow: hidden;
+  flex: 1;
+  letter-spacing: 2rpx;
+}
+.top-text-1 {
+  font-size: 1.2em;
+  font-weight: bolder;
+}
+.top-text-2 {
+  overflow: hidden;
+  font-size: 24rpx;
+  color: var(--text-color-spin);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.header-bottom {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+.subject {
+  padding-top: 480rpx;
+  max-height: 300rpx;
+  background-color: #ffffff;
+  margin-bottom: 10rpx;
+}
+.subject-title {
+  display: flex;
+  margin: 0 40rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid rgba(0, 0, 0, .1);
+  align-items: center;
+}
+.switch {
+  display: flex;
+  height: 50rpx;
+  width: 180rpx;
+  margin-right: 20rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius: 25rpx;
+  color: var(--themeColor-light);
+  border: 1px solid currentColor;
+  overflow: hidden;
+}
+.switch-item {
+  flex: 1;
+}
+.active {
+  color: #ffffff;
+  background-image: linear-gradient(to right, var(--themeColor-light-A),var(--themeColor-light));
+}
+.switch-item:first-child {
+  /* background-color: tomato; */
+}
+.subject-title-ope {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+  font-size: 28rpx;
+}
+.subject-title-ope-inner {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.ope-prot {
+  letter-spacing: 2rpx;
+}
+.model {
+  color: var(--themeColor-light);
+}
+.icon-youjiantou {
+  padding-left: 20rpx;
+  color: var(--text-color-spin);
+  font-size: 28rpx;
+}
+.subject-content {
+  display: flex;
+  padding: 20rpx 0;
+  align-items: center;
+}

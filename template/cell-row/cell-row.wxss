@@ -1,0 +1,24 @@
+.cell-row {
+  display: flex;
+  align-items: center;
+}
+.cell-row-grade {
+  text-align: center;
+  width: 100rpx;
+  font-size: 40rpx;
+  color: orange;
+}
+.cell-row-time {
+  flex: 1;
+  padding-left: 20rpx;
+  font-size: 30rpx;
+  color: var(--text-color-spin);
+}
+.cell-row-content {
+  text-align: right;
+  color: var(--text-color-default);
+}
+.cell-row-content-time {
+  font-size: 26rpx;
+  color: var(--text-color-spin);
+}

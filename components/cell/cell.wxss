@@ -1,0 +1,23 @@
+/* components/cell/cell.wxss */
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 20rpx;
+}
+.cell-image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+  background-color: red;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  /* background-image: url(http://192.168.43.217/rand.png); */
+  background-position: center;
+}
+.cell-text {
+  padding-top: 20rpx;
+  font-size: 0.7em;
+}

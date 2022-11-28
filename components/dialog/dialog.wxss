@@ -1,0 +1,117 @@
+@import "../../common//wxss/animate.wxss";
+@import "../../icon/index.wxss";
+.dialog {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 9999;
+}
+.content {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-height: calc(70vh + 90rpx);
+  background-color: #ffffff;
+}
+/* 内容动画控制 */
+.content-hide {
+  animation: slideDown .3s forwards;
+}
+.content-show {
+  animation: slideUp .3s forwards;
+}
+/* 标题 90rpx */
+
+/* 主体 */
+.content-main {
+  padding-bottom: 20rpx;
+}
+.scroll-view {
+  max-height: 70vh;
+  /* overflow-anchor: none; */
+}
+.scroll-item {
+  position: relative;
+  padding-bottom: 20rpx;
+}
+.scroll-item-title {
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 20rpx;
+  color: #817e7e;
+  background-color: #faf8f8;
+  letter-spacing: 2rpx;
+  font-size: 24rpx;
+  animation: fadeIn 2s;
+}
+.scroll-item-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 80rpx;
+}
+.icon-item {
+  position: relative;
+  margin: 20rpx;
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #817e7e;
+  border-radius: 100%;
+  /* border: 2rpx solid rgba(0, 0, 0, .2); */
+}
+.icon-item::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  transform: scale(0.5, 0.5);
+  overflow: hidden;
+  border: 2rpx solid rgba(0,0,0,.1);
+  border-radius: 100%;
+  pointer-events: none;
+}
+.icon-correct-c {
+  color: green;
+  background-color: rgb(51, 226, 51, .2);
+}
+.icon-error-e {
+  color: red;
+  background-color: rgba(255, 0, 0, .1);
+}
+.position-fixed::before {
+  content: attr(data-title);
+  position: fixed;
+  top: 80rpx;
+  right: 0;
+  left: 0;
+  height: 80rpx;
+  color: #817e7e;
+  background-color: #faf8f8;
+  text-indent: 20rpx;
+  z-index: 1;
+  animation: fadeIn .3s forwards;
+}
+.position-bottom::after {
+  content: attr(data-title);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 80rpx;
+  color: #817e7e;
+  text-indent: 20rpx;
+  background-color: #faf8f8;
+}
+
+.collect {
+  color: red;
+}
+

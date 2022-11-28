@@ -1,0 +1,34 @@
+<!--pages/special-pratice/special-pratice.wxml-->
+<page-meta root-font-size="system" />
+
+<view class="sp">
+  <tabs tabList="{{tabList}}" bindtoggle="toggle">
+    <view slot="subject1">
+      <block wx:if="{{chapterMap}}">
+        <block 
+          wx:for="{{chapterMap}}"
+          wx:for-item="chapter"
+          wx:key="name"
+        >
+          <cell-singer
+            info="{{chapter}}"
+            bindtap="cellTapHandle"
+          ></cell-singer>
+        </block>
+      </block>
+    </view>
+    <view slot="subject4">
+      <view class="content-box">
+        <block
+          wx:for="{{specialMap}}"
+          wx:for-item="special"
+          wx:key="name"
+        >
+          <view class="content-box-item">
+            <cell-singer bindtap="cellTapHandle" info="{{special}}"></cell-singer>
+          </view>
+        </block>
+      </view>
+    </view>
+  </tabs>
+</view>

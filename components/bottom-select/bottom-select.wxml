@@ -1,0 +1,52 @@
+<!--components/bottom-select/bottom-select.wxml-->
+<wxs module="bs">
+  var getCollectClass = function (isCollect) {
+    return isCollect ? 'collection' : 'no-collection'
+  }
+  var getShowName = function (isCollect) {
+    return isCollect ? '已收藏' : '收藏'
+  }
+  module.exports = {
+    getCollectClass: getCollectClass,
+    getShowName: getShowName
+  }
+</wxs>
+<view
+  class="bottom-select {{ needBorder ? 'top-border' : ''}}"
+  style="position: {{position}}; {{paddingTop}}; {{posType}}"
+>
+  <view
+    class="bottom-select-text"
+    catchtap="clickHandle"
+    hover-class="hoverClass"
+    data-type="{{btnType}}"
+  >
+    <text
+      catchtap="clickHandle"
+      data-type="collect"
+      class="iconfont icon-shoucang {{bs.getCollectClass(isCollect)}}"
+    ></text>
+    <text
+      wx:if="{{examInfo.testType !== 'rand'}}"
+      class="collect-text"
+    >{{bs.getShowName(isCollect)}}</text>
+    <text
+      catchtap="clickHandle"
+      data-type="submit"
+      wx:else
+      class="collect-text"
+    >交卷</text>
+  </view>
+  <view class="bottom-select-text">
+    <text class="iconfont icon-zhengque"></text>
+    <text class="correct">{{examInfo.correctNum}}</text>
+  </view>
+  <view class="bottom-select-text">
+    <text class="iconfont icon-error1"></text>
+    <text class="error">{{examInfo.errorNum}}</text>
+  </view>
+  <view catchtap="showDialog" class="bottom-select-text">
+    <text class="iconfont icon-tubiao"></text>
+    <text>{{examInfo.currentIndex + 1}}/{{examInfo.totalNum}}</text>
+  </view>
+</view>

@@ -1,0 +1,19 @@
+.cell-singer {
+  display: flex;
+  padding: 20rpx 20rpx;
+  font-size: 30rpx;
+  align-items: center;
+  background-color: #ffffff;
+}
+.left-icon {
+  width: 50rpx;
+  padding: 0 10rpx;
+}
+.cell-singer-content {
+  flex: 1;
+}
+.right-icon {
+  width: 50rpx;
+  padding: 0 10rpx;
+  text-align: right;
+}

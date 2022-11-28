@@ -1,0 +1,10 @@
+<!--components/cell/cell.wxml-->
+<view class="cell" style="flex-direction: {{direction}};">
+  <view class="cell-image"
+    style="background-image: url({{cellData.url}}); background-color: {{cellData.color}};"
+  ></view>
+  <view class="cell-text">
+    <view>{{cellData.name}}</view>
+    <view wx:if="{{cellData.desc}}">{{cellData.desc}}</view>
+  </view>
+</view>

@@ -1,0 +1,57 @@
+<!--components/cellRow/cellRow.wxml-->
+<view wx:if="{{showInfo}}" class="cell-row" data-name="{{showInfo.name}}" data-id="{{showInfo.id}}">
+  <block wx:if="{{ showInfo.type === 'header'}}" >
+    <image
+      mode="widthFix"
+      src="http://192.168.43.217/default.jpg"
+      class="cell-row-image"
+      data-url="{{showInfo.userImage}}"
+    >
+    </image>
+    <view class="cell-row-text">
+      <view wx:if="{{showInfo.examNum === 0}}" class="cell-row-text-name" >
+        你还没考试记录哟
+      </view>
+      <view wx:else class="cell-row-text-name">
+        你历史最高成绩{{showInfo.maxGrade}}分
+      </view>
+    </view>
+    <view class="cell-row-btn">
+      <button class="exam-btn">去考试</button>
+    </view>
+  </block>
+  <block wx:else>
+    <view
+      wx:if="{{showInfo.type === 'rank'}}"
+      class="cell-row-index {{indexTypeArr[index]}}"
+    >
+      <text wx:if="{{index < 3}}" class="iconfont icon-bangdan"></text>
+      <text wx:else class="cell-row-index-text">{{index + 1}}</text>
+    </view>
+    <image
+      mode="widthFix"
+      class="cell-row-image"
+      data-url="{{showInfo.userImage}}"
+      src="http://192.168.43.217/default.jpg"
+      lazy-load
+    >
+    </image>
+    <view class="cell-row-text">
+      <view class="cell-row-text-name">
+        {{showInfo.userName}}
+      </view>
+      <view class="cell-row-text-grade">
+        {{showInfo.grade}}分
+      </view>
+    </view>
+    <view wx:if="{{showInfo.date}}" class="cell-row-date">
+      {{showInfo.date}}
+    </view>
+    <view
+      wx:if="{{showInfo.time}}"
+      class="cell-row-time {{index < 2 ? 'color-orange' : 'color-blue'}}"
+    >
+      {{showInfo.time}}
+    </view>
+  </block>
+</view>

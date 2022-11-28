@@ -1,0 +1,11 @@
+<!--
+  icon,
+  name,
+  desc,
+-->
+<template name="mineStyle">
+  <view class="mine-style iconfont {{icon}}" data-icon="{{icon}}">
+    <view class="mine-style-title">{{name}}</view>
+    <view class="mine-style-desc">{{desc}}</view>
+  </view>
+</template>

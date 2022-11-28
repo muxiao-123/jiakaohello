@@ -1,0 +1,30 @@
+<!-- { type,name,id,totalNum,gradeNum,examNum,correctPercentage } -->
+<template name="mine-cell">
+  <view
+    class="mine-cell-item"
+  >
+    <view wx:if="{{info.type === 'vipCourse'}}" class="mine-cell-item-num">
+      <text class="btn">vip课程</text>
+    </view>
+    <view wx:else class="mine-cell-item-num">
+      {{info.type === 'answer' ? info.totalNum : info.gradeNum}}
+    </view>
+    <view wx:if="{{info.type !== 'vipCourse'}}" class="mine-cell-item-desc">
+      {{info.desc[0]}}
+    </view>
+    <view wx:if="{{info.type !== 'vipCourse'}}" class="mine-cell-item-result">
+      <view>
+        <text>{{info.desc[1]}}</text>
+        <text
+          wx:if="{{info.type === 'answer'}}"
+          class="green"
+        >{{info.correctPercentage}}</text>
+        <text wx:else class="green">{{info.examNum}}</text>
+      </view> 
+    </view>
+    <view wx:if="{{info.type === 'vipCourse'}}" class="mine-cell-item-result">
+      <view>{{info.descA[0]}}</view>
+      <view>{{info.descA[1]}}</view>
+    </view>
+  </view>
+</template>

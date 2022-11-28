@@ -1,0 +1,31 @@
+<!--components/tabs/tabs.wxml-->
+<view class="tabs">
+  <view class="tab-nav">
+    <block wx:if="{{tabList}}">
+      <view
+        wx:for="{{tabList}}"
+        wx:key="id"
+        class="tab-nav-item"
+      >
+        <text
+          class="tab-nav-item-desc {{currentIndex === index ? 'active' : ''}}"
+          bindtap="toggleSubject"
+          data-index="{{index}}"
+        >{{item.name}}</text>
+      </view>
+    </block>
+  </view>
+  <swiper
+    current="{{currentIndex}}"
+    bindchange="changeHandle"
+    class="swiper"
+    style="{{height ? 'height:' + height : ''}}"
+  >
+    <swiper-item class="swiper-item">
+      <slot name="subject1"></slot>
+    </swiper-item>
+    <swiper-item class="swiper-item">
+      <slot name="subject4"></slot>
+    </swiper-item>
+  </swiper>
+</view>

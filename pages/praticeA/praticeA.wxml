@@ -1,0 +1,71 @@
+<!--pages/praticeA/praticeA.wxml-->
+<view class="praticeA">
+  <view class="praticeA-header">
+    <view class="praticeA-header-content">
+      <view class="pac-pencentage">
+        <text class="pac-pencentage-num">{{showInfo._correctPen}}<text class="pac-pencentage-icon">%</text></text>
+        <text class="pac-pencentage-desc">本次正确率</text>
+      </view>
+      <view class="pac-mid-content">
+        <view class="pac-mid-item">
+          <text class="pac-mid-item-time">{{showInfo.p_time}}</text>
+          <text class="pac-mid-item-desc">练习时间</text>
+        </view>
+        <view class="pac-mid-item">
+          <text class="pac-mid-item-time">{{showInfo._errorNum}}</text>
+          <text class="pac-mid-item-desc">我的错题</text>
+        </view>
+        <view class="pac-mid-item">
+          <text class="pac-mid-item-time">{{showInfo._completeNum}}</text>
+          <text class="pac-mid-item-desc">本次答题数</text>
+        </view>
+      </view>
+      <view
+        class="pac-btn"
+        bindtap="checkError"
+      >
+        查看错题
+      </view>
+    </view>
+  </view>
+  <view class="praticeA-middle">
+    <view class="pa-m-header">
+      <text class="pa-m-title">累计答题</text>
+      <text class="pa-m-desc">{{showInfo.completeNum}}题</text>
+      <text class="pa-m-num">未做题{{showInfo.restNum}}题</text>
+    </view>
+    <view class="pa-progress">
+      <view class="pa-progress-text">{{showInfo.completePen}}%</view>
+      <progress
+        percent="{{showInfo.completePen}}"
+        activeColor="#6fa8dc"
+        active
+      ></progress>
+    </view>
+  </view>
+  <view class="praticeA-bottom">
+    <view class="pa-m-title pa-b-title">相关练习</view>
+    <view
+      class="pa-b-item"
+      data-type="icon-tricks"
+      bindtap="tapHandle"
+    >
+      <view class="pa-b-item-box">
+        <view class="pa-b-item-descA">图标速记</view>
+        <view class="pa-b-item-descB">易淆易混叫你如何必坑</view>
+      </view>
+      <view class="iconfont icon-youjiantou"></view>
+    </view>
+    <view
+      class="pa-b-item"
+      data-type="special-pratice"
+      bindtap="tapHandle"
+    >
+      <view class="pa-b-item-box">
+        <view class="pa-b-item-descA">章节练习</view>
+        <view class="pa-b-item-descB">精简分类方便快速提升</view>
+      </view>
+      <view class="iconfont icon-youjiantou "></view>
+    </view>
+  </view>
+</view>

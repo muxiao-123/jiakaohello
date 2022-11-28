@@ -1,0 +1,91 @@
+<!--
+此文件为开发者工具生成，生成时间: 2022/11/22上午11:08:01
+使用方法：
+在 I:\minpro\doban_video\pages\pratice\pratice.wxml 引入模板
+
+```
+<import src="pratice.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
+```
+
+在 I:\minpro\doban_video\pages\pratice\pratice.wxss 中引入样式
+```
+@import "./pratice.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view is="components/jk-nav-bar/jk-nav-bar">
+      <view class="bar--nav-bar" style="padding-top:20px;height: 40px">
+        <view class="bar--nav-bar-content">
+          <view class="bar--nav-bar-icon" hover-class="hover-active">
+            <text class="bar--iconfont bar--icon-fanhui1 sk-pseudo sk-pseudo-circle"></text>
+          </view>
+          <view class="bar--nav-bar-content-title">
+            <view class="bar--nav-bar-content-title-box">
+              <text class="bar--active sk-transparent sk-text-14-2857-668 sk-text" data-index="1" style="background-position-x: 50%;">答题模式</text>
+              <text data-index="2" class="sk-transparent sk-text-14-2857-400 sk-text" style="background-position-x: 50%;">背题模式</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <scroll-view enhanced="true" scroll-y="true" class="scroll-view" style="padding-top: 60px;">
+      <view is="components/question/question" style="scroll-snap-align: none;">
+        <view class="question--q">
+          <view class="question--q-topic">
+            <view class="question--q-topic-type">
+              <text class="question--judg-tag sk-transparent sk-text-20-0000-940 sk-text">单选题</text>
+            </view>
+            <view>
+              <text user-select="true" class="question--q-topic-desc sk-transparent sk-text-14-2857-959 sk-text">这个标志是何含义？</text>
+            </view>
+          </view>
+          <view class="question--q-image">
+            <image show-menu-by-longpress="true" class="question--q-image-desc sk-image" mode="aspectFit"></image>
+          </view>
+          <view class="question--q-select-list">
+            <view data-item="item1" data-select-index="1">
+              <view class="question--q-select-no">
+                <text class="question--q-select-btn sk-transparent sk-text-10-0000-778 sk-text" style="background-position-x: 50%;">A</text>
+                <text class="sk-transparent sk-text-14-2857-685 sk-text">大型客车专用车道</text>
+              </view>
+            </view>
+            <view data-item="item2" data-select-index="1">
+              <view class="question--q-select-no">
+                <text class="question--q-select-btn sk-transparent sk-text-10-0000-616 sk-text" style="background-position-x: 50%;">B</text>
+                <text class="sk-transparent sk-text-14-2857-203 sk-text">公交线路专用车道</text>
+              </view>
+            </view>
+            <view data-item="item3" data-select-index="1">
+              <view class="question--q-select-no">
+                <text class="question--q-select-btn sk-transparent sk-text-10-0000-24 sk-text" style="background-position-x: 50%;">C</text>
+                <text class="sk-transparent sk-text-14-2857-223 sk-text">快速公交系统专用车道</text>
+              </view>
+            </view>
+            <view data-item="item4" data-select-index="1">
+              <view class="question--q-select-no">
+                <text class="question--q-select-btn sk-transparent sk-text-10-0000-46 sk-text" style="background-position-x: 50%;">D</text>
+                <text class="sk-transparent sk-text-14-2857-761 sk-text">多乘员车辆专用车道</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+    <view class="pratice-bottom">
+      <view class="pratice-bottom-item" hover-class="hoverClass">
+        <text class="sk-transparent sk-text-14-2857-684 sk-text">收藏</text>
+        <text class="iconfont icon-shoucang no-collection sk-pseudo sk-pseudo-circle"></text>
+      </view>
+      <view class="pratice-bottom-item">
+        <text class="corret sk-transparent"><text class="iconfont icon-xiaolian sk-pseudo sk-pseudo-circle"></text>0</text>
+        <text class="error sk-transparent"><text class="iconfont icon-cry sk-pseudo sk-pseudo-circle"></text>0</text>
+        <text decode="true" class="current sk-transparent sk-text-14-2857-5 sk-text" style="background-position-x: 100%;">当前:&nbsp;1/43</text>
+      </view>
+    </view>
+    <view is="components/dialog/dialog" id="dialog"></view>
+  </view>
+</template>

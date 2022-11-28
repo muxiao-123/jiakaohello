@@ -1,0 +1,25 @@
+var propObserver = function(newValue, oldValue, ownerInstance, instance) {
+
+  if (newValue) {
+    var canvasError = ownerInstance.selectComponent('.error-canvas')
+    var canvasBg = ownerInstance.selectComponent('.error-canvas-A')
+    canvasError.setStyle({
+      display: 'none'
+    })
+    canvasBg.setStyle({
+      display: 'none'
+    })
+    var errorImageNodeList = ownerInstance.selectAllComponents('.error-num-image')
+    for (var i = 0; i < errorImageNodeList.length; ++i) {
+      errorImageNodeList[i].setStyle({
+        'background-image': 'url(' + newValue + ')',
+        'background-size': '100%',
+        'background-repeat': 'no-repeat'
+      })
+    }
+  }
+}
+
+module.exports = {
+  propObserver: propObserver
+}

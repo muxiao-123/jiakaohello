@@ -1,0 +1,37 @@
+<!--components/jk-nav-bar/jk-nav-bar.wxml-->
+<view
+  class="nav-bar"
+  style="padding-top:{{paddingTop}}px;height: {{height}}px" 
+>
+  <view class="nav-bar-content">
+    <view
+      bindtap="back"
+      class="nav-bar-icon"
+      hover-class="hover-active"
+    >
+      <text class="iconfont {{iconClass ? iconClass : 'icon-fanhui1'}}"></text>
+    </view>
+    <view class="nav-bar-content-title">
+      <view wx:if="{{testType === 'read-exam'}}">
+        驾考hello
+      </view>
+      <block wx:else>
+        <slot wx:if="{{needSlot}}"></slot>
+        <view wx:else class="nav-bar-content-title-box">
+          <text
+            data-index="{{1}}"
+            data-type="answer"
+            bindtap="toggleHandle"
+            class="rightBorder {{activeIndex === 1? 'active' : ''}}"
+          >答题模式</text>
+          <text
+            data-index="{{2}}"
+            data-type="backQuestion"
+            bindtap="toggleHandle"
+            class="leftBorder {{activeIndex === 2? 'active' : ''}}"
+          >背题模式</text>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,34 @@
+// 手势wxs,左滑右滑
+var startX = null
+var touchStart = function(event) {
+  var sPageX = event.changedTouches[0].pageX
+  startX = sPageX
+}
+var touchEnd = function(event, ownerInstance) {
+  var ePageX = event.changedTouches[0].pageX
+  var diffent = ePageX - startX 
+  var instance = event.instance
+  var canLeft = instance.getDataset()['canLeft']
+  var canRight = instance.getDataset()['canRight']
+  var propagation = instance.getDataset()['propagation']
+  // console.log(canRight)
+  if (diffent > 0 && diffent > 80) {
+    if (canRight) {
+      ownerInstance.triggerEvent('rightmove')
+    }
+  }
+  if (diffent < 0 && Math.abs(diffent) > 80) {
+    if (canLeft) {
+      ownerInstance.triggerEvent('leftmove')
+    }
+  }
+  startX = null
+  if (propagation) {
+    return false
+  }
+}
+
+module.exports = {
+  touchStart: touchStart,
+  touchEnd: touchEnd
+}

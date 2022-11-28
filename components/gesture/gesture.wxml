@@ -1,0 +1,10 @@
+<!--components/gesture/gesture.wxml-->
+<wxs src="./gesture.wxs" module="gesture"></wxs>
+<view
+  bindtouchstart="{{gesture.touchStart}}"
+  bindtouchend="{{gesture.touchEnd}}"
+  data-can-Left="{{canLeft}}"
+  data-can-Right="{{canRight}}"
+> 
+  <slot></slot>
+</view>

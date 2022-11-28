@@ -1,0 +1,39 @@
+/* components/education/education.wxss */
+.education {
+  padding: 0 20rpx;
+  border-top: 20rpx solid var(--bg-color-place);
+}
+.education-header {
+  padding: 20rpx 0;
+  overflow: hidden;
+}
+.education-text {
+  font-size: 1.1em;
+  font-weight: bolder;
+}
+.education-text:last-child {
+  float: right;
+  font-size: 0.7em;
+  font-weight: normal;
+  transform: translateY(30%);
+}
+.education-swiper {
+  height: 200rpx;
+  text-align: center;
+  border-bottom: 20rpx solid transparent;
+}
+.e-s-item-image {
+  box-sizing: border-box;
+  width: 100%;
+  border-right: 20rpx solid transparent;
+  height: 200rpx;
+  border-radius: 20rpx;
+}
+.e-s-i-i-n {
+  border-radius: 0;
+}
+.e-s-i-i-nn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-right: none;
+}

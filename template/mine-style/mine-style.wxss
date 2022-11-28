@@ -1,0 +1,28 @@
+@import "../../icon/index.wxss";
+.mine-style {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4rpx;
+  padding: 20rpx;
+  /* background-color: rgba(255,255,0,.15); */
+  background-color: rgba(215, 222, 228, 0.3);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mine-style::before {
+  position: absolute;
+  right: -10rpx;
+  bottom: -10rpx;
+  color: var(--themeColor-dark);
+  font-size:60rpx;
+  font-weight: bolder;
+}
+.mine-style-title {
+  font-weight: bolder;
+  color: #000000;
+}
+.mine-style-desc {
+  font-size: 24rpx;
+  color: var(--text-color-spin)
+}

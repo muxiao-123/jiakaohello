@@ -1,0 +1,85 @@
+<!--pages/pratice/pratice.wxml-->
+<wxs module="pratice" src="./pratice.wxs"></wxs>
+<import src="./pratice.skeleton" />
+<view
+  change:prop="{{pratice.wxPropObserver}}"
+  prop="{{actionType}}"
+  change:propA="{{pratice.changeCClass}}"
+  propA="{{fristInit}}"
+>
+  <jk-nav-tab
+    bindtoggle="toggleHandle"
+    bindback="backHandle"
+    testType="{{pageData.testType}}"
+  ></jk-nav-tab>
+  <dialog
+    isCollect="{{isCollect}}"
+    id="dialog"
+    examInfo="{{pageData}}"
+    list="{{list}}"
+    bindselectTap="selectTapHandle"
+    bindbtnclick="btnClickHandle"
+  ></dialog>
+  <bottom-select
+    isCollect="{{isCollect}}"
+    examInfo="{{pageData}}"
+    btnType="collect"
+    bindopen="showDialog"
+    bindbsrect="handlebsRect"
+    class="bottom-select"
+    bindbtnclick="btnClickHandle"
+    needBorder="{{true}}"
+  ></bottom-select>
+</view>
+<view
+  class="question-box"
+  style="padding-top: {{navHeight + 4}}px;"
+>
+  <gesture
+    bindrightmove="{{pratice.rightmove}}"
+    bindleftmove="{{pratice.leftmove}}"
+    canLeft="{{canLeft}}"
+    canRight="{{canRight}}"
+    data-can-left="{{canLeft}}"
+    data-can-right="{{canRight}}"
+    class="gesture"
+  >
+    <view class="slide" style="height: {{maxHeight}};">
+      <view
+        bindanimationend="{{pratice.animateEnd}}"
+        class="slide-content current-class"
+        data-value="question"
+      >
+        <question-demo
+          question="{{question}}"
+          bindanswer="answerHandle"
+          bindtoggle="handlePreNext"
+          name="question"
+          height="{{maxHeight}}"
+        >
+        </question-demo>
+      </view>
+      <view
+        bindanimationend="{{pratice.animateEnd}}"
+        class="slide-content"
+        data-value="questionA"
+      >
+        <question-demo
+          question="{{questionA}}"
+          bindanswer="answerHandle"
+          bindtoggle="handlePreNext"
+          name="questionA"
+          height="{{maxHeight}}"
+        >
+        </question-demo>
+      </view> 
+    </view>
+  </gesture>
+</view>
+<view class="finish-loading {{ dialog ? '' : 'hidden-loading'}}">
+  <view class="rotate-box">
+    <view class="finish-loading-icon">驾考hello</view>
+    <view class="finish-loading-icon-front">驾考hello</view>
+  </view>
+</view>
+<!-- <template is="skeleton" wx:if="{{loading}}"></template> -->

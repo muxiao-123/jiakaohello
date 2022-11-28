@@ -1,0 +1,65 @@
+<!--components/subject/subject.wxml-->
+<wxs module="subject" src="./subject.wxs" />
+<view
+  wx:if="{{subjectInfo}}"
+  class="subject"
+>
+  <view class="subject-item">
+    <block wx:for="{{subjectInfo.funList.left}}" wx:key="id">
+      <view
+        class="select-box"
+        data-test-Type="{{item.type}}"
+        catchtap="tapHandle"
+        hover-class="hoverClass"
+      >
+        <text
+          class="select-box-icon iconfont {{item.iconClass}}"
+          style="background-color: {{item.color}};"
+        >
+        </text>
+        <text class="select-box-desc">{{item.name}}</text>
+      </view>
+    </block>
+  </view>
+  <view class="subject-item">
+    <block wx:for="{{subjectInfo.textArr}}" wx:key="*this">
+      <view
+        class="canvas-box"
+        catchtap="tapHandle"
+        data-test-Type="{{subject.getUrlType(index)}}"
+      >
+        <view class="canvas-text">
+          <view class="canvas-text-item">{{item}}</view>
+          <view
+            wx:if="{{index === 0}}"
+            class="canvas-text-item"
+          >
+            <text wx:if="{{type === 'subject1'}}">{{subject1.completeNum}}/{{subject1.totalNum}}</text>
+            <text wx:else>{{subject4.completeNum}}/{{subject4.totalNum}}</text>
+          </view>
+          <view wx:else class="canvas-text-item">
+            {{subjectInfo.textPlace}}
+          </view>
+        </view>
+        <image
+          src="{{index === 0 ? canvasUrlA : canvasUrlB}}"
+          binderror="errorHandle"
+          class="image"
+        ></image>
+      </view>
+    </block>
+    <canvas id="order-canvas" type="2d" class="canvas"></canvas>
+  </view>
+  <view class="subject-item">
+    <block wx:for="{{subjectInfo.funList.right}}" wx:key="id">
+      <view class="select-box" data-test-Type="{{item.type}}" catchtap="tapHandle" hover-class="hoverClass">
+        <text
+          class="select-box-icon iconfont {{item.iconClass}}"
+          style="background-color: {{item.color}};"
+        >
+        </text>
+        <text class="select-box-desc">{{item.name}}</text>
+      </view>
+    </block>
+  </view>
+</view>

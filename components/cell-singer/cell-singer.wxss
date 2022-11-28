@@ -1,0 +1,39 @@
+/* components/cell-singer/cell-singer.wxss */
+.cell-singer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  /* border-bottom: 2rpx solid rgba(0,0,0,.1); */
+}
+.cell-1-bottom::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  transform: scale(0.5, 0.5);
+  border-bottom: 2rpx solid rgba(0,0,0,.1);
+}
+.cell-singer-index {
+  margin-right: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 100%;
+  color: #ffffff;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 28rpx;
+  background-color: orangered;
+}
+.cell-singer-text {
+  overflow: hidden;
+  flex: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.cell-singer-num {
+  font-size: 26rpx;
+  color: rgba(0,0,0,.6);
+}

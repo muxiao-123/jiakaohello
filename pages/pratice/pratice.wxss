@@ -1,0 +1,150 @@
+/* pages/pratice/pratice.wxss */
+@import './pratice.skeleton.wxss';
+.corret {
+  color: green;
+}
+.error {
+  color: red;
+}
+@keyframes zoomOut {
+  0% {
+    transform: scale(1.2, 1.2);
+  }
+  50% {
+    transform: scale(1.1, 1.1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.9, 0.9);
+  }
+  50% {
+    transform: scale(0.8, 0.8);
+  }
+  100% {
+    transform: scale(0.7, 0.7);
+  }
+}
+.gesture {
+  padding-top: 20rpx;
+}
+.slide {
+  position: relative;
+  /* height: 80vh; */
+  overflow-y: auto;
+  transform-style: preserve-3d;
+  transform: translate3d(0, 0, 0);
+}
+.slide-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translate3d(0, 0, 0);
+}
+.current-class {
+  z-index: 2;
+}
+.rotate-in {
+  transform-origin: left center;
+  animation: rotateIn .3s backwards;
+}
+.rotate-out {
+  transform-origin: left center;
+  animation: rotateOut .3s backwards;
+}
+
+@keyframes rotateIn{
+  0% {
+    opacity: 0;
+    z-index: 4;
+    transform: rotateY(280deg);
+  }
+  100% {
+    opacity: 1;
+    z-index: 4; 
+    transform: translateZ(0) rotateY(350deg);
+  }
+}
+@keyframes rotateOut{
+  0% {
+    opacity: 1;
+    transform: rotateY(-10deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateZ(0) rotateY(-80deg);
+  }
+}
+.finish-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #cccccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.rotate-box {
+  width: 240rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000rpx;
+  transform-origin: center;
+  font-size: 40rpx;
+  font-weight: bolder;
+  letter-spacing: 2rpx;
+  animation: rotate 3s linear infinite;
+  color: #ffffff;
+}
+.finish-loading-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: orangered;
+  border-radius: 20rpx;
+  transform: translateZ(2rpx);
+}
+.finish-loading-icon-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: rotateY(180deg);
+  background-color: var(--themeColor-light-A);
+  border-radius: 20rpx;
+}
+@keyframes rotate {
+  from {
+    transform: rotateY(0deg)
+  }
+  to {
+    transform: rotateY(360deg)
+  }
+}
+.hidden-loading {
+  animation: fadeOut .3s linear forwards;
+  /* transition: ; */
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}

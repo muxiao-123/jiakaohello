@@ -1,0 +1,20 @@
+var getName = function (grade) {
+  if (grade === 100) {
+    return '秋名山车神'
+  } else if (grade >= 80) {
+    return '荡秋千'
+  } else if (grade >= 60) {
+    return '正规驾驶员'
+  } else {
+    return '马路杀手'
+  }
+}
+var handleLoad = function(e, ownerInstance) {
+  // console.log(JSON.stringify(res))
+  var instance = ownerInstance.selectComponent('.finish-loading')
+  instance.addClass('hidden-loading')
+}
+module.exports = {
+  getName: getName,
+  handleLoad: handleLoad
+}

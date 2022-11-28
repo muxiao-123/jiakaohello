@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "jk-nav-tab": "../../components/jk-nav-bar/jk-nav-bar",
+    "dialog": "../../components/dialog/dialog",
+    "question-demo": "../../components/question/question",
+    "bottom-select": "../../components/bottom-select/bottom-select",
+    "gesture": "../../components/gesture/gesture"
+  },
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": false
+}

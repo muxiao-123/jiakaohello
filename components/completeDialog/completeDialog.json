@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "circle-slide": "../circle-slide/circle-slide"
+  }
+}

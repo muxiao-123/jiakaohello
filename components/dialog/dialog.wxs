@@ -1,0 +1,14 @@
+var classMap = {
+  'none': '',
+  'correct': 'icon-correct-c',
+  'error': 'icon-error-e'
+}
+module.exports = {
+  getClassName: function (key) {
+    if (classMap[key]) {
+      return classMap[key]
+    } else {
+      return ''
+    }
+  }
+}

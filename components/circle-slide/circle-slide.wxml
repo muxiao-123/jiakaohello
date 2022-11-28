@@ -1,0 +1,4 @@
+<!--components/circle-slide/circle-slide.wxml-->
+<view class="demo">
+  <canvas type="2d" id="circle-slide" class="demo-canvas"></canvas>
+</view>

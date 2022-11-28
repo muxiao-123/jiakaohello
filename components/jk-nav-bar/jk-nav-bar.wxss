@@ -1,0 +1,58 @@
+/* components/jk-nav-bar/jk-nav-bar.wxss */
+@import '../../icon/index.wxss';
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  z-index: 999;
+}
+.nav-bar-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+.nav-bar-icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+.iconfont {
+  position: absolute;
+  top: 50%;
+  padding: 0 20rpx;
+  font-size: 1.2em;
+  transform: translateY(-50%);
+}
+.nav-bar-content-title {
+  flex: 1;
+  text-align: center;
+}
+.nav-bar-content-title-box {
+  padding: 4rpx 8rpx;
+}
+.rightBorder {
+  padding: 4rpx 10rpx;
+  border: 2rpx solid rgba(0, 0, 0, .1);
+  border-right: none;
+  background-color: #ffffff;
+}
+.leftBorder {
+  padding: 4rpx 10rpx;
+  border: 2rpx solid rgba(0, 0, 0, .1);
+  border-left: none;
+  background-color: #ffffff;
+}
+.active {
+  color: #ffffff;
+  background-color: var(--themeColor-light);
+}
+.hover-active {
+  color: green;
+}

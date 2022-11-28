@@ -1,0 +1,75 @@
+/* components/cellRow/cellRow.wxss */
+@import "../../icon/index.wxss";
+.cell-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+}
+.cell-row-index {
+  position: relative;
+  margin-left: 20rpx;
+  text-align: center;
+  width: 80rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.cell-row-index .icon-bangdan {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40rpx;
+  z-index: -1;
+}
+.frist-top {
+  color: var(--bg-color-red);
+}
+.two-top {
+  color: var(--theme-color-orange);
+}
+.three-top {
+  color: var(--theme-color-yellow);
+}
+.color-blue {
+  color: var(--theme-color-blue);
+}
+.color-orange {
+  color: var(--theme-color-orange);
+}
+.cell-row-image {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 100%;
+  background-color: #cccccc;
+}
+.cell-row-text {
+  flex: 1;
+  font-size: 30rpx;
+}
+.cell-row-text-grade {
+  font-size: 24rpx;
+  color: var(--text-color-spin);
+}
+.cell-row-btn {
+  width: 160rpx;
+  padding-right: 20rpx;
+}
+.cell-row-btn .exam-btn {
+  width: 100%;
+  padding: 10rpx 0;
+  font-size: 26rpx;
+  border-radius: 40rpx;
+  background-image: linear-gradient(var(--themeColor), var(--themeColor-light));
+  color: var(--text-color-w);
+}
+.cell-row-date {
+  padding-right: 20rpx;
+  font-size: 26rpx;
+}
+.cell-row-time {  
+  padding-right: 20rpx;
+  font-size: 26rpx;
+}

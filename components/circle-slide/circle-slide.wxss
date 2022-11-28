@@ -1,0 +1,6 @@
+/* components/circle-slide/circle-slide.wxss */
+.demo-canvas {
+  width: 300rpx;
+  height: 300rpx;
+  background-color: transparent;
+}

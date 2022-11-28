@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "jk-nav-tab": "../../components/jk-nav-bar/jk-nav-bar",
+    "dialog": "../../components/dialog/dialog",
+    "question-demo": "../../components/question/question",
+    "count-down": "../../components/count-down/count-down",
+    "gesture": "../../components/gesture/gesture",
+    "bottom-select": "../../components/bottom-select/bottom-select",
+    "complete-dialog": "../../components/completeDialog/completeDialog"
+  },
+  "navigationStyle": "custom"
+}

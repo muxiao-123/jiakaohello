@@ -1,0 +1,80 @@
+// 翻页wxs 通过交替两个视图
+var toggleFn = function(actionType, ownerInstance) {
+  var instances = ownerInstance.selectAllComponents('.slide-content')
+  instances.forEach(function(v, i) {
+    if (actionType === 'next' && v.hasClass('current-class')) {
+      v.addClass('rotate-out')
+    }
+    if (actionType === 'pre' && !v.hasClass('current-class')) {
+      v.addClass('rotate-in')
+    }
+  })
+}
+var wxPropObserver = function (newValue, oldValue, owenerInstance, instance) {
+  console.log('change')
+  // 数据处理完毕，可执行动画了
+  if (newValue === 'next' || newValue === 'pre') {
+    console.log(newValue)
+    toggleFn(newValue, owenerInstance)
+  } else {
+    console.log('null' + newValue)
+  }
+  // console.log(newValue)
+  // console.log('prop change')
+}
+var animateEnd = function (e, ownerInstance) {
+  var instances = ownerInstance.selectAllComponents('.slide-content')
+  var name
+  instances.forEach(function(v, i) {
+    v.removeClass('rotate-out')
+    v.removeClass('rotate-in')
+    if (v.hasClass('current-class')) {
+      v.removeClass('current-class')
+    } else {
+      v.addClass('current-class')
+      name = v.getDataset()['value']
+
+    }
+  })
+  // var instance = e.instance
+  // var name = instance.getDataset()['value']
+  ownerInstance.callMethod('animateEnd', name)
+}
+var rightmove = function (e, ownerInstance) {
+  var instance = ownerInstance.selectComponent('.current-class')
+  var key = instance.getDataset()['value']
+  // 调用方法，等待执行动画
+  ownerInstance.callMethod('beforeSlide', { type: 'pre', key: key })
+  // console.log('come on right')
+}
+var leftmove = function (e, ownerInstance) {
+  // 等待
+  var instance = ownerInstance.selectComponent('.current-class')
+  var key = instance.getDataset()['value']
+  // 调用方法，等待执行动画
+  ownerInstance.callMethod('beforeSlide', { type: 'next', key: key })
+  // console.log('come on left')
+}
+var changeCClass = function (newValue, oldValue, ownerInstance) {
+  console.log('fristInt')
+  console.log(newValue)
+  if (newValue !== 'none') {
+    var instances = ownerInstance.selectAllComponents('.slide-content')
+    instances.forEach(function(v) {
+      var value = v.getDataset()['value']
+      if (newValue == value) {
+        v.removeClass('current-class')
+      } else {
+        v.addClass('current-class')
+      }
+    })
+    ownerInstance.callMethod('modifyClass')
+  }
+}
+module.exports = {
+  animateEnd: animateEnd,
+  leftmove: leftmove,
+  rightmove: rightmove,
+  wxPropObserver: wxPropObserver,
+  changeCClass: changeCClass
+}

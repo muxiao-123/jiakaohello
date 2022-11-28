@@ -1,0 +1,63 @@
+<wxs module="dlog" src="./dialog.wxs" />
+<view
+  wx:if="{{dialog}}"
+  class="dialog {{ show ? 'fadeIn' : 'fadeOut' }}"
+  mut-bind:tap="closeDialog"
+>
+  <view
+    data-dialog="{{show}}"
+    bindanimationend="animationend"
+    mut-bind:tap=""
+    class="content {{show ? 'content-show' : 'content-hide'}}"
+  >
+    <bottom-select
+      isCollect="{{isCollect}}"
+      examInfo="{{examInfo}}"
+      position="absolute"
+      posType="top: 0;left: 0;right:0"
+      paddingTop="padding-top:0;"
+      bindbtnclick="btnclick"
+    >
+    </bottom-select>
+    <view class="content-main">
+      <scroll-view
+        scroll-y
+        enable-flex
+        enhanced
+        enable-passive
+        fast-deceleration
+        show-scrollbar="{{false}}"
+        bindscroll="dragendHandle"
+        class="scroll-view"
+        catchtap=""
+      >
+        <block wx:for="{{pannelData}}" wx:key="id">
+          <view
+            class="scroll-item"
+            id="{{'item' + index}}"
+            data-name="{{item.name}}"
+            catchtap="tapHandle"
+          >
+            <view
+              class="scroll-item-title {{item.name === fixName ? 'position-fixed ' : 'position-bottom' }}"
+              data-title="{{item.title}}"
+            >
+              {{item.title}}
+            </view>
+            <view class="scroll-item-content">
+              <view 
+                wx:for="{{item.lists}}"
+                wx:key="id"
+                wx:for-item="list"
+                class="icon-item {{dlog.getClassName(list.answerResult)}}"
+                data-index="{{list.index}}"
+              >
+                {{list.index + 1}}
+              </view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+</view>

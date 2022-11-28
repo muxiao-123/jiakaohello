@@ -1,0 +1,86 @@
+<!--pages/exam/exam.wxml-->
+<wxs src="./exam.wxs" module="exam"></wxs>
+<view
+  change:prop="{{exam.wxPropObserver}}"
+  prop="{{actionType}}"
+  change:propA="{{exam.changeCClass}}"
+  propA="{{fristInit}}"
+>
+  <jk-nav-tab
+    needSlot="{{true}}"
+    bindback="backHandle"
+  >
+    <count-down
+      id="count-down"
+      allTime="{{countTime}}"
+    ></count-down>
+  </jk-nav-tab>
+  <bottom-select
+    isCollect="{{isCollect}}"
+    examInfo="{{pageData}}"
+    btnType="submit"
+    bindopen="showDialog"
+    bindbtnclick="btnClick"
+    bindbsrect="handlebsRect"
+    class="bottom-select"
+    needBorder="{{true}}"
+  >
+  </bottom-select>
+  <dialog
+    id="dialog"
+    examInfo="{{pageData}}"
+    list="{{list}}"
+    bindselectTap="selectTapHandle"
+    bindbtnclick="btnClick"
+  >
+  </dialog>
+  <complete-dialog
+    id="complete-dialog"
+    bindbtnclick="btnClickHandle"
+  ></complete-dialog>
+</view>
+
+<view
+  class="question-box"
+  style="padding-top: {{navHeight + 10}}px;"
+>
+  <gesture
+    bindrightmove="{{exam.rightmove}}"
+    bindleftmove="{{exam.leftmove}}"
+    canLeft="{{canLeft}}"
+    canRight="{{canRight}}"
+    data-can-left="{{canLeft}}"
+    data-can-right="{{canRight}}"
+    class="gesture"
+  >
+    <view class="slide" style="height: {{maxHeight}};">
+      <view
+        bindanimationend="{{exam.animateEnd}}"
+        class="slide-content current-class"
+        data-value="question"
+      >
+        <question-demo
+          question="{{question}}"
+          bindanswer="answerHandle"
+          bindtoggle="handlePreNext"
+          name="question"
+        >
+        </question-demo>
+      </view>
+      <view
+        bindanimationend="{{exam.animateEnd}}"
+        class="slide-content"
+        data-value="questionA"
+      >
+        <question-demo
+          question="{{questionA}}"
+          bindanswer="answerHandle"
+          bindtoggle="handlePreNext"
+          name="questionA"
+        >
+        </question-demo>
+      </view> 
+    </view>
+  </gesture>
+</view>
+

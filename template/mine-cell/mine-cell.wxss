@@ -1,0 +1,28 @@
+.mine-cell-item {
+  flex: 1;
+  text-align: center;
+}
+.mine-cell-item-num .btn {
+  padding: 4rpx 30rpx;
+  border-radius: calc(1.3em);
+  color: #ffffff;
+  font-weight: normal;
+  font-size: .9em;
+  background-image: linear-gradient(to right, var(--themeColor), var(--themeColor-light)); 
+}
+.mine-cell-item-num {
+  font-size: 1.1em;
+  color: var(--themeColor-light);
+  font-weight: bolder;
+  padding-bottom: 10rpx;
+}
+.mine-cell-item-desc {
+  font-size: 28rpx;
+  padding-bottom: 10rpx;
+}
+.mine-cell-item-result {
+  font-size: 24rpx;
+}
+.mine-cell-item-result .green {
+  color: var(--themeColor-light);
+}

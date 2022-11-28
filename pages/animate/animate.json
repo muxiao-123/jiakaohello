@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "tabs": "../../components/tabs/tabs",
+    "subject": "../../components/subject/subject",
+    "education": "../../components/education/education"
+  }
+}

@@ -1,0 +1,60 @@
+<!--pages/mine/mine.wxml-->
+<import src="../../template/mine-style/mine-style.wxml"></import>
+<import src="../../template/cell-singer/cell-singer.wxml"></import>
+<import src="../../template/mine-cell/mine-cell.wxml"></import>
+<view class="mine" style="padding-top: {{navInfo.paddingTop}}px;">
+  <view class="header" style="top: {{navInfo.navHeight * 1.5}}px">
+    <view class="header-top">
+      <view class="top-image iconfont icon-xiaolian"></view>
+      <view class="top-text">
+        <view class="top-text-1">{{userInfo.userName}}</view>
+        <view wx:if="{{userInfo.desc}}" class="top-text-2">
+          {{userInfo.desc}}
+        </view>
+      </view>
+    </view>
+    <view class="header-bottom">
+      <block wx:for="{{styleList}}" wx:key="name">
+        <template is="mineStyle"data="{{...item}}"></template>
+      </block>
+    </view>
+  </view>
+  <view class="subject">
+    <view class="subject-title">
+      <view class="switch">
+        <view
+          wx:for="{{[1,4]}}"
+          wx:key="*this"
+          class="switch-item {{jkInfo.subject === item ? 'active' : ''}}"
+        >
+          {{item}}
+        </view>
+      </view>
+      <view class="subject-title-ope">
+        <view
+          class="subject-title-ope-inner"
+          bindtap="toggleModel"
+        >
+          <text class="ope-prot">切换题库:</text>
+          <text class="model">{{currentModel.name}}</text>
+          <text class="iconfont icon-youjiantou"></text>
+        </view>
+      </view>
+    </view>
+    <view class="subject-content">
+      <template is="mine-cell" data="{{ info: answerResult }}"></template>
+      <template is="mine-cell" data="{{ info: examResult }}"></template>
+      <template is="mine-cell" data="{{ info: otherResult }}"></template>
+    </view>
+  </view>
+  <view class="select">
+    <block
+      wx:for="{{selectList}}"
+      wx:key="id"
+      class="select-item"
+    >
+      <template is="cell-singer" data="{{item}}"></template>
+    </block>
+  </view>
+</view>
+

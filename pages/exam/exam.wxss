@@ -1,0 +1,67 @@
+/* pages/exam/exam.wxss */
+.corret {
+  color: green;
+}
+.error {
+  color: red;
+}
+.question-box {
+  /* height: 70vh; */
+  /* overflow-y: auto; */
+}
+.gesture {
+  padding-top: 20rpx;
+}
+.slide {
+  position: relative;
+  /* height: 80vh; */
+  overflow-y: auto;
+  transform-style: preserve-3d;
+  transform: translate3d(0, 0, 0);
+}
+.slide-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translate3d(0, 0, 0);
+}
+.slide-content:first-child {
+}
+.slide-content:last-child {
+}
+.current-class {
+  z-index: 2;
+}
+.rotate-in {
+  transform-origin: left center;
+  animation: rotateIn .3s backwards;
+}
+.rotate-out {
+  transform-origin: left center;
+  animation: rotateOut .3s backwards;
+}
+
+@keyframes rotateIn{
+  0% {
+    opacity: 0;
+    z-index: 4;
+    transform: rotateY(280deg);
+  }
+  100% {
+    opacity: 1;
+    z-index: 4; 
+    transform: translateZ(0) rotateY(350deg);
+  }
+}
+@keyframes rotateOut{
+  0% {
+    opacity: 1;
+    transform: rotateY(-10deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateZ(0) rotateY(-80deg);
+  }
+}

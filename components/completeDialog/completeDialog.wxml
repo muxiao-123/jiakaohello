@@ -1,0 +1,85 @@
+<!--components/completeDialog/completeDialog.wxml-->
+<wxs src="./completeDialog.wxs" module="cdialog"></wxs>
+<view
+  change:prop="{{cdialog.wxPropObserver}}"
+  prop="{{dialog}}"
+  wx:if="{{dialog}}"
+  class="c-dialog"
+  style="color: {{cdialog.setColor(completeData.c_pencentage)}}"
+>
+  <view
+    class="content"
+    bindtap="closeDialog"
+    wx:if="{{completeData}}"
+  >
+    <block>
+      <view
+        wx:if="{{cdialog.isSubmit(actionType)}}"
+        class="header c-dialog-grade"
+      >
+        成绩{{cdialog.caclGrade(completeData.c_pencentage, completeData.testType)}}
+      </view>
+      <view wx:else class="header c-dialog-back">
+        退出做题
+      </view>
+    </block>
+    <block>
+      <view wx:if="{{cdialog.isSubmit(actionType)}}" class="submit-image">
+        <circle-slide
+          id="circle-slide"
+          lineWidth="{{8}}"
+          activeColor="{{cdialog.setColor(completeData.c_pencentage)}}"
+          num="{{completeData.restNum}}"
+        ></circle-slide>
+        <view class="submit-image-inner">
+          <view class="submit-desc">未做题</view>
+          <view class="submit-num">{{completeData.restNum}}题</view>
+        </view>
+      </view>
+      <view wx:else class="continue-image">
+        <circle-slide
+          lineWidth="{{8}}"
+          num="{{completeData.completeNum}}"
+        ></circle-slide>
+        <view class="continue-image-inner">
+          <view class="continue-desc">当前考试进度</view>
+          <view class="continue-num">{{completeData.completeNum}}/{{completeData.totalNum}}题</view>
+        </view>
+      </view>
+    </block>
+    <block>
+      <view wx:if="{{cdialog.isSubmit(actionType)}}" class="time">
+        <text class="iconfont">a</text>
+        <text class="iconfont">剩余时间</text>
+        <text class="iconfont">{{completeData.restTime}}</text>
+      </view>
+      <view wx:else class="time">
+        <text class="iconfont">你还有{{completeData.restNum}}道题未作</text>
+      </view>
+    </block>
+    <block>
+      <view wx:if="{{cdialog.isSubmit(actionType)}}" class="btn-ground">
+        <view
+          class="submit-btn-continue"
+          bindtap="tapHandle"
+          data-value="continue"
+          wx:if="{{completeData.completeNum !== completeData.totalNum}}"
+        >
+          继续答题
+        </view>
+        <view
+          class="submit-btn"
+          bindtap="tapHandle"
+          data-value="submit"
+          style="background-color: {{cdialog.setColor(completeData.c_pencentage)}};"
+        >
+          现在交卷
+        </view>
+      </view>
+      <view wx:else class="btn-ground">
+        <view data-value="continue" class="continue-btn" catchtap="tapHandle">继续答题</view> 
+        <view data-value="back" class="continue-btn" catchtap="tapHandle">退出</view>
+      </view>
+    </block>
+  </view>
+</view>

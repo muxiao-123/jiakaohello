@@ -1,0 +1,115 @@
+<!--
+此文件为开发者工具生成，生成时间: 2022/11/10下午9:09:52
+使用方法：
+在 I:\minpro\doban_video\pages\animate\animate.wxml 引入模板
+
+```
+<import src="animate.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
+```
+
+在 I:\minpro\doban_video\pages\animate\animate.wxss 中引入样式
+```
+@import "./animate.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="animate">
+      <view is="components/tabs/tabs">
+        <view class="tabs--tabs">
+          <view class="tabs--tab-nav">
+            <view class="tabs--tab-nav-item">
+              <text class="tabs--tab-nav-item-desc tabs--active sk-transparent sk-text-28-0000-828 sk-text" data-index="0" style="background-position-x: 50%;">科目一</text>
+            </view>
+            <view class="tabs--tab-nav-item">
+              <text class="tabs--tab-nav-item-desc sk-transparent sk-text-30-0000-713 sk-text" data-index="1" style="background-position-x: 50%;">科目四</text>
+            </view>
+          </view>
+          <swiper class="tabs--swiper" current="0" autoplay="false">
+            <swiper-item class="tabs--swiper-item" style="position: absolute; width: 100%; height: 100%; transform: translate(0%, 0px) translateZ(0px);">
+              <view class="subject1">
+                <view is="components/subject/subject">
+                  <view class="subject--subject">
+                    <view class="subject--subject-item">
+                      <view class="subject--select-box">
+                        <text class="subject--select-box-icon subject--iconfont subject--icon-VIP sk-pseudo sk-pseudo-circle"></text>
+                        <text class="subject--select-box-desc sk-transparent sk-opacity">A</text>
+                      </view>
+                      <view class="subject--select-box">
+                        <text class="subject--select-box-icon subject--iconfont subject--icon-lianxi sk-pseudo sk-pseudo-circle"></text>
+                        <text class="subject--select-box-desc sk-transparent sk-opacity">B</text>
+                      </view>
+                      <view class="subject--select-box">
+                        <text class="subject--select-box-icon subject--iconfont subject--icon-icon_xinyong_xianxing_jijin- sk-pseudo sk-pseudo-circle"></text>
+                        <text class="subject--select-box-desc sk-transparent sk-opacity">C</text>
+                      </view>
+                      <view class="subject--select-box">
+                        <text class="subject--select-box-icon subject--iconfont subject--icon-tubiao sk-pseudo sk-pseudo-circle"></text>
+                        <text class="subject--select-box-desc sk-transparent sk-opacity">D</text>
+                      </view>
+                    </view>
+                    <view class="subject--subject-item">
+                      <view class="subject--canvas-box">
+                        <view class="subject--canvas-text">
+                          <view class="subject--canvas-text-item sk-transparent sk-text-14-2857-832 sk-text" style="background-position-x: 50%;">顺序学习</view>
+                          <view class="subject--canvas-text-item sk-transparent sk-text-14-2857-214 sk-text" style="background-position-x: 50%;">8/987</view>
+                        </view>
+                        <image class="subject--image sk-image"></image>
+                      </view>
+                      <view class="subject--canvas-box">
+                        <view class="subject--canvas-text">
+                          <view class="subject--canvas-text-item sk-transparent sk-text-14-2857-245 sk-text" style="background-position-x: 50%;">随机测试</view>
+                          <view class="subject--canvas-text-item sk-transparent sk-text-14-2857-256 sk-text" style="background-position-x: 50%;">gogogo</view>
+                        </view>
+                        <image class="subject--image sk-image"></image>
+                      </view>
+                    </view>
+                    <view class="subject--subject-item">
+                      <view class="subject--select-box">
+                        <text class="subject--select-box-icon subject--iconfont subject--icon-cuotiben sk-pseudo sk-pseudo-circle"></text>
+                        <text class="subject--select-box-desc sk-transparent sk-opacity">E</text>
+                      </view>
+                      <view class="subject--select-box">
+                        <text class="subject--select-box-icon subject--iconfont subject--icon-shijuan sk-pseudo sk-pseudo-circle"></text>
+                        <text class="subject--select-box-desc sk-transparent sk-opacity">F</text>
+                      </view>
+                      <view class="subject--select-box">
+                        <text class="subject--select-box-icon subject--iconfont subject--icon-zhuanwan sk-pseudo sk-pseudo-circle"></text>
+                        <text class="subject--select-box-desc sk-transparent sk-opacity">G</text>
+                      </view>
+                      <view class="subject--select-box">
+                        <text class="subject--select-box-icon subject--iconfont subject--icon-paihangbang sk-pseudo sk-pseudo-circle"></text>
+                        <text class="subject--select-box-desc sk-transparent sk-opacity">H</text>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </swiper-item>
+          </swiper>
+        </view>
+      </view>
+      <view class="demo-education">
+        <view class="demo-education-header">
+          <text class="sk-transparent sk-text-14-2857-474 sk-text">驾考教育</text>
+          <text class="sk-transparent sk-text-14-2857-1000 sk-text">更多》</text>
+        </view>
+        <view class="demo-education-swiper">
+          <swiper indicator-dots="true" current="0" autoplay="false">
+            <swiper-item class="d-e-s-item" style="position: absolute; width: 100%; height: 100%; transform: translate(0%, 0px) translateZ(0px);">
+              <text class="sk-transparent sk-opacity">1</text>
+            </swiper-item>
+          </swiper>
+        </view>
+      </view>
+      <view class="demo-subject-model">
+        <view class="demo-subject-model-item sk-transparent sk-text-14-2857-988 sk-text">icon</view>
+        <view class="demo-subject-model-item sk-transparent sk-text-14-2857-725 sk-text">当前题库()</view>
+        <view class="demo-subject-model-item sk-transparent sk-text-14-2857-723 sk-text">定位&gt;</view>
+      </view>
+    </view>
+  </view>
+</template>

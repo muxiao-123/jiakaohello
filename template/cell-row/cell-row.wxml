@@ -1,0 +1,31 @@
+<wxs module="cellRow">
+  var getColor = function (grade) {
+    if (grade >= 100) {
+      return 'green'
+    } else if (grade >= 80) {
+      return '#ff4500'
+    } else if (grade >= 60) {
+      return '#FFCC33'
+    } else {
+      return '#be2a2a'
+    }
+  }
+  module.exports = {
+    getColor: getColor
+  }
+</wxs>
+<template name="cell-row">
+  <view class="cell-row">
+    <view
+      style="color: {{cellRow.getColor(info.grade)}}"
+      class="cell-row-grade"
+    >
+      {{info.grade}}分
+    </view>
+    <view class="cell-row-time">{{info.timeText}}</view>
+    <view class="cell-row-content">
+      <view class="cell-row-content-name">{{info.name}}</view>
+      <view class="cell-row-content-time">{{info.date}}</view>
+    </view>
+  </view>
+</template>

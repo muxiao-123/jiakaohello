@@ -1,0 +1,8 @@
+/* pages/special-pratice/special-pratice.wxss */
+.content-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+.content-box-item {
+  width: 50vw;
+}

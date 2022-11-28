@@ -1,0 +1,19 @@
+<!--components/cell-singer/cell-singer.wxml-->
+<view
+  wx:if="{{info}}"
+  data-id="{{info.id}}"
+  data-name="{{info.name}}"
+  catchtap="tapHandle"
+  class="cell-singer {{ needBottom? 'cell-1-bottom' : '' }}"
+>
+  <view wx:if="{{info.icon}}" class="iconfont {{info.icon}}"></view>
+  <view wx:else style="background-color: {{info.color}};" class="cell-singer-index">{{info.id || '+'}}</view>
+  <view class="cell-singer-text">{{info.title}}</view>
+  <view
+    wx:if="{{info.size}}"
+    class="cell-singer-num"
+  >
+    {{info.size}}题
+  </view>
+  <view wx:else class="cell-singer-num"></view>
+</view>

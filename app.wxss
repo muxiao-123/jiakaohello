@@ -1,0 +1,51 @@
+/**app.wxss**/
+@import './icon/index.wxss';
+
+/* .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} */
+page {
+  background-color: #ffffff;
+  --themeColor: #cef4f4;
+  --themeColor-dark: #ddf0f0;
+  --themeColor-light: #6fa8dc;
+  --themeColor-light-A: #97c1e7;
+  --text-color: #cccccc;
+  --text-color-w: #ffffff;
+  --text-color-spin: #5e5c5c;
+  --text-color-black: #000000;
+  --text-color-default: #3d3838;
+  --bg-color: #cef4f4;
+  --bg-color-light: #6fa8dc;
+  --bg-color-red: #be2a2a;
+  --bg-color-teal: #008080;
+  --bg-place: #f5efef;
+  --bg-color-w: #e6e5e5;
+  --bg-color-spin-blue: rgb(54, 169, 236);
+  --bg-color-place: rgba(0,0,0,.05);
+  --p-width: 20rpx;
+  --theme-color-red: #FF6666;
+  --theme-color-green: #66CC99;
+  --theme-color-blue: #6fa8dc;
+  --theme-color-blue-dark: #66CCFF;
+  --theme-color-yellow: #FFCC33;
+  --theme-color-yellow-dark: #f3d98c;
+  --theme-color-orange: #ff4500;
+  --theme-color-orange: rgb(143, 38, 6);
+  /* --theme-color-orange: rgb(228, 152, 124, .3); */
+  /* --theme-color-orange: #308ce2; */
+}
+
+.mybtn {
+  width: 70vw!important;
+  border-radius: 40rpx;
+  color: #ffffff;
+  background-image: linear-gradient(to right, var(--themeColor), var(--themeColor-light));
+  letter-spacing: 4rpx;
+}

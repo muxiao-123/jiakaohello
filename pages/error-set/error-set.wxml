@@ -1,0 +1,77 @@
+<!--pages/error-set/error-set.wxml-->
+<page-meta root-font-size="system" />
+<wxs module="test" src="./error-set.wxs"></wxs>
+<view class="error-set">
+  <tabs tabList="{{tabList}}" height="90vh">
+    <view slot="subject1">
+      <view class="error-list">
+        <view class="error-list-header">
+          <view
+            class="error-num-image"
+            change:prop="{{test.propObserver}}"
+            prop="{{urlA}}"
+          >
+            <image mode="widthFix" class="error-num-canvas" src="{{url}}"></image>
+            <view class="error-num">
+              <view class="error-num-id">{{c_subject.errorNum}}</view>
+              <view class="error-num-text">错题数</view>
+            </view>
+            <canvas type="2d" id="error-canvas" class="error-canvas"></canvas>
+            <canvas type="2d" id="error-canvas-A" class="error-canvas-A"></canvas>
+          </view>
+          <button data-type="all" bindtap="checkHandle" class="error-list-header-btn">全部错题</button>
+        </view>
+        <view data-type="today" bindtap="checkHandle" class="error-list-middle">
+          <view class="error-list-middle-desc">今日错题</view>
+          <view class="error-list-middle-btn">
+            <text>攻错{{today.errorNum}}道</text>
+            <text class="iconfont icon-youjiantou"></text>
+          </view>
+        </view>
+        <view
+          class="error-list-type"
+          wx:for="{{pageData.errorList}}"
+          wx:key="id"
+          data-name="{{item.name}}"
+        >
+          <view class="error-list-type-item">
+            <view class="iconfont tag">{{item.id}}</view>
+            <view class="desc">{{item.title}}</view>
+            <view class="num">{{item.num}}<text class="iconfont icon-youjiantou"></text></view>
+          </view>
+        </view>
+        <view class="error-list-btn">
+          <button data-type="error" bindtap="clearAll">清空我的错题</button>
+        </view>
+      </view>
+    </view>
+    <view slot="subject4">
+      <view class="error-list-header">
+        <view
+            class="error-num-image"
+            change:prop="{{test.propObserver}}"
+            prop="{{urlA}}"
+          >
+            <image mode="widthFix" class="error-num-canvas" src="{{url}}"></image>
+            <view class="error-num">
+              <view class="error-num-id">{{c_subject.collectNum}}</view>
+              <view class="error-num-text">收藏数</view>
+            </view>
+          </view>
+        <button data-type="collect" bindtap="checkHandle" class="error-list-header-btn">全部收藏题</button>
+      </view>
+      <view class="error-info">
+        <view class="error-info-prot">
+          <view class="error-info-prot-icons">
+            <text class="iconfont icon-icon_xinyong_xianxing_jijin-"></text>
+            <text class="iconfont icon-icon_xinyong_xianxing_jijin-"></text>
+            <text class="iconfont icon-icon_xinyong_xianxing_jijin-"></text>
+          </view>
+          <view>
+            你收藏的题目会自动记录到这里
+          </view>
+        </view>
+      </view>
+    </view>
+  </tabs>
+</view>

@@ -1,0 +1,94 @@
+<!--components/question/question.wxml-->
+<wxs module="question" src="./question.wxs" />
+<scroll-view
+  class="scroll-view"
+  enhanced
+  show-scrollbar="{{false}}"
+  scroll-y
+  style="height: {{height}};"
+>
+  <view class="q" wx:if="{{questionData}}">
+    <view class="q-topic">
+      <text class="judg-tag">{{question.getQuestionType(questionData.topicType)}}</text>
+      {{questionData.question}}
+    </view>
+
+    <block wx:if="{{questionData.url}}">
+      <view class="q-image">
+        <image
+          mode="aspectFit"
+          src="{{questionData.url}}"
+          class="q-image-desc"
+          show-menu-by-longpress
+        ></image>
+      </view>
+    </block>
+
+    <view class="q-select-list">
+      <view
+        wx:for="{{questionData.answerMap}}"
+        wx:for-index="name"
+        wx:key="name"
+        bindtap="clickHandle"
+        data-select-Index="1"
+        data-item="{{name}}"
+      >
+        <block wx:if="{{questionData[name]}}">
+          <view
+            wx:if="{{questionData.userSelect[name]}}" class="q-select-is"
+          >
+            <view
+              wx:if="{{questionData.answerMap[name] === 'correct'}}"
+              class="q-select-btn correct"
+            >
+              <text class="iconfont icon-zhengquewancheng" ></text>
+            </view>
+            <view wx:else class="q-select-btn error">
+              <text class="iconfont icon-error"></text>
+            </view>
+            <view class="q-select-desc">
+              <text
+                user-select
+                class="{{questionData.answerMap[name] === 'in-correct' ? 'error' : 'correct'}}"
+              >{{questionData[name]}}</text>
+            </view>
+          </view>
+          <view wx:else class="q-select-no">
+            <text class="q-select-btn">{{question.getItemName(name)}}</text>
+            <text>{{questionData[name]}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view wx:if="{{!questionData.isLock}}" class="q-answer">
+      <view class="q-answer-desc">
+        答案:<text decode>&nbsp;{{questionData.answerText}}</text>
+      </view>
+    </view>
+    <view wx:if="{{!questionData.isLock}}" class="q-skill">
+      <view class="q-skill-title">本题技巧</view>
+    </view>
+    <view wx:if="{{!questionData.isLock}}" class="q-explain">
+      <text class="q-explain-btn">题目解析</text>
+      <rich-text
+        class="q-explain-content"
+        nodes="{{questionData.explains}}"
+        user-select
+      ></rich-text>
+    </view>
+    <view wx:if="{{false}}" class="next-box">
+      <button
+        class="btn"
+        data-type="previous"
+        catchtouchstart="handleNextPre"
+        size="mini"
+      >上一题</button>
+      <button
+        class="btn"
+        data-type="next"
+        catchtouchstart="handleNextPre"
+        size="mini"
+      >下一题</button>
+    </view>
+  </view>
+</scroll-view>

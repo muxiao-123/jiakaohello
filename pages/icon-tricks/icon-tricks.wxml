@@ -1,0 +1,39 @@
+<!--pages/icon-tricks/icon-tricks.wxml-->
+<wxs module="itrick">
+</wxs>
+<view class="trick">
+  <view
+    wx:for="{{iconTrickMap}}"
+    wx:for-item="iconTrick"
+    wx:key="name"
+  >
+    <view
+      data-title="{{iconTrick.title}}"
+      catchtap="tapHandle"
+      class="trick-item-header"
+      data-value="{{iconTrick.name}}"
+    >
+      <view class="trick-item-header-desc">{{iconTrick.title}}</view>
+      <view class="trick-item-header-btn">
+        <text class="">{{iconTrick.size}}张</text>
+        <text class="iconfont icon-youjiantou"></text>
+      </view>
+    </view>
+    <view
+      class="trick-item-image"
+    >
+      <view
+        class="icon-image"
+        wx:for="{{iconTrick._list}}"
+        wx:key="*this"
+      >
+        <image
+          class="icon-image-inner"
+          mode="aspectFit"
+          src="{{item}}"
+        >
+        </image>
+      </view>
+    </view>
+  </view>
+</view>

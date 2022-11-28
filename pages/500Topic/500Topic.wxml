@@ -1,0 +1,77 @@
+<!--pages/500Topic/500Topic.wxml-->
+<page-meta root-font-size="system" />
+
+<view class="topic">
+  <scroll-view
+    class="scroll-view"
+    scroll-y
+    enhanced
+    show-scrollbar="{{false}}"
+  >
+    <view class="topic-content">
+      <view class="content-bg">
+        <view class="content-bg-box">
+          <view class="bg-box-title">
+            <text>没时间刷题?就科一用精简题库</text>
+          </view>
+          <view class="bg-box-flex">
+            <view class="bg-box-left">
+              <view>vip课程 精选题库</view>
+              <view>500题</view>
+              <view>高效学理论</view>
+            </view>
+            <view class="bg-box-right">
+              <view>普通题库</view>
+              <view>1700+题</view>
+              <view>刷题时间长</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="content-desc-box">
+        <view class="content-desc-box-title">附送八大权益</view>
+        <view class="desc-box">
+          <view class="desc-box-item">
+            <text class="iconfont icon-shijuan"></text>
+            <text class="">精选课程</text>
+          </view>
+          <view class="desc-box-item">
+            <text class="iconfont icon-icon_xinyong_xianxing_jijin-"></text>
+            <text class="">考前密卷</text>
+          </view>
+          <view class="desc-box-item">
+            <text class="iconfont icon-VIP"></text>
+            <text class="">考前冲刺</text>
+          </view>
+          <view class="desc-box-item">
+            <text class="iconfont icon-tubiao"></text>
+            <text class="">速记口诀</text>
+          </view>
+          <view class="desc-box-item">
+            <text class="iconfont icon-xiaolian"></text>
+            <text class="">速记口诀</text>
+          </view>
+          <view class="desc-box-item">
+            <text class="iconfont icon-cry"></text>
+            <text class="">速记口诀</text>
+          </view>
+          <view class="desc-box-item">
+            <text class="iconfont icon-paihangbang"></text>
+            <text class="">速记口诀</text>
+          </view>
+          <view class="desc-box-item">
+            <text class="iconfont icon-shoucang"></text>
+            <text class="">速记口诀</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="topic-bottom">
+    <view class="topic-bottom-desc">
+      <text>特惠价</text>
+      <text>45</text>
+    </view>
+    <view catchtap="payHandle" class="topic-bottom-pay">支付</view>
+  </view>
+</view>
